@@ -1,0 +1,24 @@
+repo: Nason/open-policing-database
+file: open-policing.duckdb
+pretty_name: Stanford Open Policing Project stops (88 state and city agencies) as one DuckDB database
+title: Stanford Open Policing Project Database
+license: odc-by
+tags: [policing, traffic-stops, criminal-justice, racial-disparities, open-policing, duckdb, datapond]
+size_category: 100M<n<1B
+alias: policing
+table_columns: [description, row_count, column_count]
+intro: |
+  Every standardized police stop released by the Stanford Open Policing Project: 35 state
+  patrols and 53 city or county departments, roughly 2000-2020, in one `stops` table with
+  the project's standardized columns typed (date, time, place, subject race/sex/age,
+  outcome, search, contraband, vehicle) and each location's raw_* source columns kept as
+  text. `locations` documents every source file with its observed and stated coverage and
+  the project's data notes; `v_stops_by_year` gives per-location annual counts.
+quick_start_sql: |
+  SELECT state, subject_race, COUNT(*) AS stops,
+         ROUND(100.0 * COUNT(*) FILTER (WHERE search_conducted) / COUNT(*) FILTER (WHERE search_conducted IS NOT NULL), 2) AS pct_searched
+  FROM policing.stops WHERE date >= '2015-01-01' AND subject_race IN ('white', 'black', 'hispanic')
+  GROUP BY 1, 2 ORDER BY 1, 2;
+footer: |
+  Build pipeline, the project's data readme and caveats: https://github.com/ian-nason/open-policing-database
+  Source: Stanford Open Policing Project, https://openpolicing.stanford.edu (ODC-By 1.0; cite Pierson et al. 2020).

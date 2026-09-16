@@ -1,0 +1,1680 @@
+[
+ {
+  "city": "Little Rock",
+  "state": "AR",
+  "ranges": [
+   [
+    "2017-01-01",
+    "2017-11-03"
+   ]
+  ],
+  "notes": [
+   "lat/lng data doesn't appear totally accurate, there are ~18k lat/lngs that",
+   "Data is deduplicated on date, time, lat, lng, race, sex, and officer name,",
+   "Data consists only of citations",
+   "raw_defendant_race represents `Defendant Race` in the raw data and is the"
+  ],
+  "line": 603
+ },
+ {
+  "city": "Gilbert",
+  "state": "AZ",
+  "ranges": [
+   [
+    "2008-01-01",
+    "2018-05-23"
+   ]
+  ],
+  "notes": [
+   "Data is deduplicated on call_id, reducing the number of records 17.6%; this",
+   "Most important data is missing, including outcome (arrest, citation,",
+   "call_type was either TS (traffic stop) or SS (subject stop), which we"
+  ],
+  "line": 681
+ },
+ {
+  "city": "Mesa",
+  "state": "AZ",
+  "ranges": [
+   [
+    "2014-01-01",
+    "2019-09-23"
+   ]
+  ],
+  "notes": [
+   "INCIDENT_NO appears to refer to the same incident but can involve",
+   "violation is charge_desc in the raw data, and raw_charge represents the",
+   "subject_race was derived from ethnicity_fixed and race_fixed in the raw data,",
+   "60,394 new stops added.",
+   "More accurate data has been used for early 2017, resulting in modest changes"
+  ],
+  "line": 761
+ },
+ {
+  "city": "Statewide",
+  "state": "AZ",
+  "ranges": [
+   [
+    "2009-01-06",
+    "2017-12-31"
+   ]
+  ],
+  "notes": [
+   "Counties were mapped in two ways. First, we determined which counties the",
+   "It would be possible to map the highway and mile marker data to geo",
+   "There is a two-week period in October 2012 and a two-week period in November",
+   "We also received a file with partial data on traffic stops pre-2009; this is",
+   "Data for violation reason is largely missing.",
+   "Raw column `VehicleSearchAuthority` and `DriverSearchAuthority` seem to provide",
+   "`raw_TypeOfSearch` includes information on who was",
+   "Some contraband information is available and so we define a contraband_found",
+   "Additional raw data columns that may be of interest: `ConsentSearchRequested`"
+  ],
+  "line": 875
+ },
+ {
+  "city": "Anaheim",
+  "state": "CA",
+  "ranges": [
+   [
+    "2012-01-01",
+    "2017-03-14"
+   ]
+  ],
+  "notes": [
+   "Very little information received, only a reference number, date, year, case",
+   "reason_for_stop is `Final Case Type D` in the raw data"
+  ],
+  "line": 1047
+ },
+ {
+  "city": "Bakersfield",
+  "state": "CA",
+  "ranges": [
+   [
+    "2008-03-09",
+    "2018-03-09"
+   ]
+  ],
+  "notes": [
+   "Data is deduplicated on raw columns date_of_birth, subject_address,",
+   "Data does not include reason for stop, search, contraband fields",
+   "Missing data dictionaries for ticket classes, ticket statuses, and",
+   "subject_race is based on ethnicity and race, the raw columns are provided in",
+   "We currently have no data dictionaries for statute_section and statute_name,",
+   "Data consists only of citations"
+  ],
+  "line": 1077
+ },
+ {
+  "city": "Oakland",
+  "state": "CA",
+  "ranges": [
+   [
+    "2013-04-01",
+    "2017-12-31"
+   ]
+  ],
+  "notes": [
+   "Data is deduplicated on raw columns contactdate, contacttime, streetname,",
+   "Stops from 2013-2015 don't have encountertype like 2016-2017, so we attempt",
+   "Contraband is encoded based on ResultOfSearch (pedestrian) and",
+   "2013 is missing the first 3 months of data and 2015 is missing the last 3",
+   "Some of the raw columns were named similarly but not exactly the same across",
+   "subject_{resultofencounter,typeofsearch,search_conducted,resultofsearch}",
+   "subject_race is derived from subject_sdrace, which is passed through to the"
+  ],
+  "line": 1179
+ },
+ {
+  "city": "San Bernardino",
+  "state": "CA",
+  "ranges": [
+   [
+    "2011-12-13",
+    "2017-09-19"
+   ]
+  ],
+  "notes": [
+   "Data is deduplicated on raw columns CreateDateTime, Address, and CallType,",
+   "Data does not include most useful information, including demographic,",
+   "type is derived from CallType, which is passed through since we lack a data"
+  ],
+  "line": 1329
+ },
+ {
+  "city": "Long Beach",
+  "state": "CA",
+  "ranges": [
+   [
+    "2008-01-01",
+    "2017-12-31"
+   ]
+  ],
+  "notes": [
+   "Data is deduplicated on raw columns Date, Location, Race, Sex, and Officer",
+   "Data does not include reason for stop, search, or contraband fields",
+   "violation is a concatenation of 4 violation descriptions, separated by ';'",
+   "type is derived from violation_1_description",
+   "raw columns sex, race, and officer_race are passed through since our",
+   "There is a notable drop in stops from 2008 to 2016, unclear what the origin"
+  ],
+  "line": 1395
+ },
+ {
+  "city": "Los Angeles",
+  "state": "CA",
+  "ranges": [
+   [
+    "2010-01-01",
+    "2018-06-23"
+   ]
+  ],
+  "notes": [],
+  "line": 1527
+ },
+ {
+  "city": "San Diego",
+  "state": "CA",
+  "ranges": [
+   [
+    "2014-01-01",
+    "2017-03-31"
+   ]
+  ],
+  "notes": [
+   "stop_id in raw data doesn't appear to apply to unique events, as the same",
+   "Data is deduplicated on raw columns timestamp, subject_race, subject_sex,",
+   "There are no locations, but service_area is provided",
+   "subject_race is derived from subject_race_description which is passed through",
+   "reason_for_search is named SearchBasis in the raw data and search_basis is",
+   "outcomes are based on ActionTaken, which is passed through as",
+   "search_conducted is named searched in the raw data; when searched is NA, this",
+   "If search_conducted was true but contraband_found was NA, it was changed to",
+   "2017 only has data for part of the year"
+  ],
+  "line": 1587
+ },
+ {
+  "city": "San Francisco",
+  "state": "CA",
+  "ranges": [
+   [
+    "2007-01-01",
+    "2016-06-30"
+   ]
+  ],
+  "notes": [
+   "Search basis in the raw data is only \"No Search\", consent, or other",
+   "Contraband found is derived from search_vehicle_description, which,",
+   "outcomes are based on result_of_contact_description, which is passed through",
+   "Data is deduplicated on raw columns date, time, race_description, sex, age,"
+  ],
+  "line": 1701
+ },
+ {
+  "city": "San Jose",
+  "state": "CA",
+  "ranges": [
+   [
+    "2013-09-01",
+    "2018-03-31"
+   ]
+  ],
+  "notes": [
+   "event_number in raw data has indeterminate meaning, several event numbers",
+   "Data is deduplicated using date, time, location, subject race, and raw_search",
+   "search_conducted is derived from SEARCH (raw_search in clean data); NAs in",
+   "type is based on `TYCOD DESCRIPTION`, which is passed through as",
+   "race is passed through to provide access to greater granularity",
+   "a translation of `EVENT DISPO` is provided as raw_event_desc; this was used",
+   "2013 and 2018 only have partial data"
+  ],
+  "line": 1809
+ },
+ {
+  "city": "Santa Ana",
+  "state": "CA",
+  "ranges": [
+   [
+    "2014-06-11",
+    "2018-04-13"
+   ]
+  ],
+  "notes": [
+   "Deduping on raw columns Date, Race, Sex, Violation Description, Officer",
+   "Data does not include search or contraband information",
+   "Data includes only citations",
+   "2014 and 2018 only contain partial data"
+  ],
+  "line": 1922
+ },
+ {
+  "city": "Statewide",
+  "state": "CA",
+  "ranges": [
+   [
+    "2009-07-01",
+    "2016-06-30"
+   ]
+  ],
+  "notes": [
+   "CHP districts roughly map to counties, so we mapped stops to counties using",
+   "Driver age categories are included in the raw data; these cannot be mapped to",
+   "Driver race was recorded with high granularity. Raw mapping:",
+   "Search basis was recorded more finely in raw data. Raw mapping:",
+   "Very few consent searches are conducted relative to other states.",
+   "Contraband found information is only available for a small subset of",
+   "Raw data contains shift time is included, but is not sufficiently granular",
+   "District and county codes have been corrected."
+  ],
+  "line": 2007
+ },
+ {
+  "city": "Stockton",
+  "state": "CA",
+  "ranges": [
+   [
+    "2012-01-01",
+    "2016-12-31"
+   ]
+  ],
+  "notes": [
+   "Data consists of two sets of files, traffic stop surveys and CAD stop files,",
+   "There may be duplicates, but unclear how to identify them, as date, age,",
+   "officer_id is coalesced officer_id and officer_id2, the former being 90% null",
+   "Outcomes are based on raw column result, which is passed through",
+   "search_conducted and search_basis are derived from the raw column search,",
+   "2012 has suspiciously little data"
+  ],
+  "line": 2154
+ },
+ {
+  "city": "Aurora",
+  "state": "CO",
+  "ranges": [
+   [
+    "2012-01-01",
+    "2020-07-31"
+   ]
+  ],
+  "notes": [
+   "Data is deduplicated on raw columns Ticket Date, Ticket Time, Ticket",
+   "subject_race was based on Race and Ethnicity in the raw data, which are",
+   "84,677 new stops added."
+  ],
+  "line": 2254
+ },
+ {
+  "city": "Denver",
+  "state": "CO",
+  "ranges": [
+   [
+    "2010-12-31",
+    "2018-07-19"
+   ]
+  ],
+  "notes": [
+   "MASTER_INCIDENT_NUMBER has many duplicates, but it's unclear what it",
+   "Data does not contain subject demographic or search/contraband information"
+  ],
+  "line": 2349
+ },
+ {
+  "city": "Statewide",
+  "state": "CO",
+  "ranges": [
+   [
+    "2010-01-01",
+    "2017-12-31"
+   ]
+  ],
+  "notes": [
+   "The state did not provide us with mappings for every police department code",
+   "Arrest and citation data are unreliable from 2014 onward. Arrest rates drop",
+   "Counties were mapped using a dictionary provided by the agency. Denver County",
+   "Rows in raw data represent violations, not stops, so we remove duplicates by",
+   "`subject_race` was mapped from `raw_Ethnicity`.",
+   "Note that data from 2016 came with about 80 fewer columns than the data pre-2016",
+   "The data came in three files, the first covered 2010-March 2016; this has full",
+   "Additional columns in the raw data that may be of interest: `MMJCard`,"
+  ],
+  "line": 2420
+ },
+ {
+  "city": "Statewide",
+  "state": "CT",
+  "ranges": [
+   [
+    "2013-10-01",
+    "2015-10-01"
+   ]
+  ],
+  "notes": [
+   "Counties were mapped by running the cities in the `Intervention Location",
+   "Rows appear to represent violations, not individual stops, because a small",
+   "While there is some search type data, a high fraction of searches are marked",
+   "While there is some violation data, too much is missing.",
+   "Race (`raw_SubjectRaceCode`, `raw_SubjectEthnicityCode`) mapping:",
+   "Search basis (`raw_SearchAuthorizationCode`) mapping:",
+   "The Connecticut state patrol created another website"
+  ],
+  "line": 2556
+ },
+ {
+  "city": "Hartford",
+  "state": "CT",
+  "ranges": [
+   [
+    "2013-10-13",
+    "2016-09-29"
+   ]
+  ],
+  "notes": [
+   "Data is deduplicated on raw columns InterventionDateTime,",
+   "search rate is suspiciously high, ~28%",
+   "hit rate is suspiciously low, ~1%; we exclude Hartford from outcome and",
+   "subject_race is based on SubjectEthnicityCode and SubjectRaceCode, which are",
+   "search_conducted and search_basis are derived from SearchAuthorizationCode,",
+   "outcomes are based on InterventionDispositionCode, which is passed through as",
+   "2013 and 2016 have only partial data"
+  ],
+  "line": 2698
+ },
+ {
+  "city": "Tampa",
+  "state": "FL",
+  "ranges": [
+   [
+    "1973-06-21",
+    "2018-03-07"
+   ]
+  ],
+  "notes": [
+   "Data is deduplicated on date, subject_race, subject_dob, officer_last_name,",
+   "Data is missing search and contraband information, as well as outcomes other",
+   "Hispanic race data is likely underreported, given that ACS 2017 5-year",
+   "The data sources are public (it's unclear what the difference is between the",
+   "subject_race is based on Race which is passed through as raw_race"
+  ],
+  "line": 2833
+ },
+ {
+  "city": "Saint Petersburg",
+  "state": "FL",
+  "ranges": [
+   [
+    "2010-01-01",
+    "2010-07-29"
+   ]
+  ],
+  "notes": [
+   "Only 7 months of data provided",
+   "No demographic, search/contraband, or outcome data"
+  ],
+  "line": 2918
+ },
+ {
+  "city": "Statewide",
+  "state": "FL",
+  "ranges": [
+   [
+    "2010-01-01",
+    "2018-12-31"
+   ]
+  ],
+  "notes": [
+   "The raw data is very messy. Two different data sets were supplied, both with",
+   "There are many duplicates in the raw data, which we remove in two stages.",
+   "The original data has a few parsing errors, but they don't seem important as",
+   "The Florida PD clarified to us that both UCC Issued and DVER Issued in the",
+   "`subject_race` was mapped from `raw_Ethnicity` and `raw_Race` (the different",
+   "`raw_SearchType` was used to conclude `search_conducted` and `search_basis`.",
+   "While there is some data on whether items were seized, it is not clear if",
+   "`raw_EnforcementAction` and `notes` were used to determine `outcome`."
+  ],
+  "line": 2971
+ },
+ {
+  "city": "Statewide",
+  "state": "GA",
+  "ranges": [
+   [
+    "2012-01-01",
+    "2016-12-31"
+   ]
+  ],
+  "notes": [
+   "The data represent warnings.",
+   "The provided `.txt` was comma-separated, but not quoted. Therefore we had to",
+   "Rows represent individual warnings, and thus need to be aggregated to",
+   "The race field on the warnings form is optional; we have only about 50% race",
+   "`subject_race` was mapped from `raw_race`."
+  ],
+  "line": 3149
+ },
+ {
+  "city": "Statewide",
+  "state": "IA",
+  "ranges": [
+   [
+    "2006-01-01",
+    "2016-04-25"
+   ]
+  ],
+  "notes": [
+   "The data separates warnings and citations. They are very different with",
+   "In some cases, there are multiple time stamps per unique (key, date)",
+   "Only citations have `Ethnicity`, which only provides information on whether",
+   "Only (some) citations have county, the warnings only have trooper district.",
+   "The codes in the county field represent counties ordered alphabetically.",
+   "Additional columns in the raw data that may be of interest: `EQUIPVIOL`"
+  ],
+  "line": 3249
+ },
+ {
+  "city": "Idaho Falls",
+  "state": "ID",
+  "ranges": [
+   [
+    "2008-08-13",
+    "2016-07-25"
+   ]
+  ],
+  "notes": [
+   "Race and gender are not on the ID driver's license and filled in only rarely,",
+   "There is 'reptspec' data, but the values are extrenely vague, i.e. \"PAST\",",
+   "There are 6 more months of data unprocessed with the main files since they",
+   "The data is missing demographic information as well as search/contraband",
+   "It's unclear whether there are duplicates, since officerid is 0 sometimes and"
+  ],
+  "line": 3369
+ },
+ {
+  "city": "Statewide",
+  "state": "IL",
+  "ranges": [
+   [
+    "2012-01-01",
+    "2017-12-31"
+   ]
+  ],
+  "notes": [
+   "The data is very messy. The presence and meaning of fields relating to search",
+   "We only process statewide data from 2012 to 2017. We received data back to",
+   "For state patrol stops, there is mostly no information on the county of the",
+   "Counties for local stops could be mapped by running the police departments",
+   "The `search_type_raw` field is occasionally \"Consent search denied\", when a",
+   "Race (`raw_DriverRace`) mapping:",
+   "Outcome (`raw_ResultOfStop`) mapping:",
+   "We also pull through raw columns `raw_ReasonForStop` and",
+   "Note that IL contains state patrol and municipal police departments, but we",
+   "Additional columns in the raw data that may be of interest: IL has really"
+  ],
+  "line": 3446
+ },
+ {
+  "city": "Chicago",
+  "state": "IL",
+  "ranges": [
+   [
+    "2012-01-01",
+    "2020-05-16"
+   ]
+  ],
+  "notes": [
+   "Dataset is created by joining arrests and citations on date, hour, officer",
+   "There may be duplicates, but there is often insufficient information to",
+   "Data includes warnings and arrests, but is missing warnings",
+   "violation represents statute_description in the raw data",
+   "subject_race is based on raw columns race and driver_race, which are passed",
+   "1,261,642 new stops added."
+  ],
+  "line": 3624
+ },
+ {
+  "city": "Fort Wayne",
+  "state": "IN",
+  "ranges": [
+   [
+    "2007-09-01",
+    "2017-09-30"
+   ]
+  ],
+  "notes": [
+   "Roster.csv (police officer info) is available in raw data, but",
+   "Data is missing search/contraband information, as well as demographic",
+   "disposition represents Description in the raw data; outcomes are derived from"
+  ],
+  "line": 3800
+ },
+ {
+  "city": "Wichita",
+  "state": "KS",
+  "ranges": [
+   [
+    "2006-01-01",
+    "2020-05-15"
+   ]
+  ],
+  "notes": [
+   "Data is deduplicated on raw columns citation_date_time, citation_location,",
+   "Data is missing search/contraband fields",
+   "citation_number in the raw data doesn't appear to be unique. i.e. citation",
+   "Only citations are included",
+   "violation represents charge_description in the raw data",
+   "disposition represents charge_disposition in the raw data",
+   "subject_race is based on the raw columns defendant_ethnicity and",
+   "100,660 new stops added."
+  ],
+  "line": 3875
+ },
+ {
+  "city": "Louisville",
+  "state": "KY",
+  "ranges": [
+   [
+    "2015-01-01",
+    "2020-06-16"
+   ]
+  ],
+  "notes": [
+   "While we have raw csvs for all citations, we keep only those records that",
+   "Data is deduplicated on raw columns officer_gender, officer_race,",
+   "subject_race is based on the raw column driver_race, since it is null 0.03%",
+   "violation represents raw column charge_desc",
+   "All stops are not null for at least one of the driver_* columns or",
+   "location used for geocoding is activity_location, which had a lower null rate",
+   "subject_age is based on persons_age from the citation data, although it is",
+   "search_conducted is based on was_vehcile_searched, which is passed through as",
+   "search_basis was based on reason_for_search; k9 searches matched the pattern",
+   "data is lacking explicit contraband information, but some of this can be",
+   "frisk_performed is true with reason_for_search matches the pattern \"TERRY|PAT\",",
+   "2018 has data only from January",
+   "35,601 new stops added."
+  ],
+  "line": 4004
+ },
+ {
+  "city": "Owensboro",
+  "state": "KY",
+  "ranges": [
+   [
+    "2015-09-01",
+    "2017-09-01"
+   ]
+  ],
+  "notes": [
+   "There is a list_of_officers.csv as well as the excel spreadsheet",
+   "Data is missing search/contraband information",
+   "Data is all citations, although it appears to include an arrest indicator as",
+   "Provided longitude is lacking the negative sign, which we add (without which",
+   "subject race is based on RACE in the raw data and passed through as raw_race;",
+   "violation is a concatenation of `Violation Description X` where X is 1 to 9",
+   "type is based on `Violation Description 1`",
+   "2015 and 2017 only have data for part of the year"
+  ],
+  "line": 4191
+ },
+ {
+  "city": "New Orleans",
+  "state": "LA",
+  "ranges": [
+   [
+    "2010-01-01",
+    "2018-07-18"
+   ]
+  ],
+  "notes": [
+   "Data is deduplicated on EventDate, BlockAddress, and SubjectID, which reduces",
+   "Addresses were partially anonymized by the department replacing the last two",
+   "search_conducted is true when the ActionsTaken includes \"Search Occurred: Yes\",",
+   "reason_for_stop is StopDescription in the raw data; type is based on this",
+   "outcomes, search, and contraband fields are all based on the ActionsTaken",
+   "subject_race is based on SubjectRace raw column, which is passed through as",
+   "data before 2010 is sparse and unreliable so it is removed from the clean",
+   "2018 only has partial data"
+  ],
+  "line": 4295
+ },
+ {
+  "city": "Statewide",
+  "state": "MA",
+  "ranges": [
+   [
+    "2007-01-01",
+    "2015-12-31"
+   ]
+  ],
+  "notes": [
+   "The search and outcome fields are inconsistent. We take the most progressive",
+   "While we define a contraband_found column in case it is useful to other",
+   "In <1% of the data, `RsltSrchNo` and `RsltSrch<contraband type>` conflict.",
+   "Violation data is not very granular.",
+   "Counties were mapped by running the cities in the `CITY_TOWN_NAME` field",
+   "There are only a handful of stops in the data before 2007; we drop those",
+   "`subject_race` was mapped from `raw_Race`",
+   "Additional columns in the raw data that may be of interest: `SpecialEvent`"
+  ],
+  "line": 4453
+ },
+ {
+  "city": "Baltimore",
+  "state": "MD",
+  "ranges": [
+   [
+    "2011-01-01",
+    "2017-12-30"
+   ]
+  ],
+  "notes": [
+   "Data is missing search/contraband information as well as demographic",
+   "The primary key seems to be a combination of Ticket and Citation Number; when",
+   "Data lacks translations for `Ordinance Code` and `Citation Type`",
+   "Violation data is almsot all null"
+  ],
+  "line": 4580
+ },
+ {
+  "city": "Statewide",
+  "state": "MD",
+  "ranges": [
+   [
+    "2007-01-01",
+    "2014-03-31"
+   ]
+  ],
+  "notes": [
+   "The data is very messy. It comes from three different time periods: 2007,",
+   "Time resolution of the data varies by year. Prior to 2013, data is reported",
+   "Counties could theoretically be mapped by running the police departments in",
+   "`subject_race` is mapped from `raw_Race`.",
+   "`outcome` and `arrest_made` are mapped from `raw_Outcome` and `raw_Arrest Made`;",
+   "`search_basis` is a cleaned up version of `reason_for_search` which is a free",
+   "Prior to 2013, there are quite a few NAs for contraband; we do not cast",
+   "Additional columns from the raw data that may be of interest: `Duration of Search`"
+  ],
+  "line": 4639
+ },
+ {
+  "city": "Statewide",
+  "state": "MI",
+  "ranges": [
+   [
+    "2001-07-06",
+    "2016-05-09"
+   ]
+  ],
+  "notes": [
+   "The original data had some unquoted fields (`VoidReason` and `Description`)",
+   "Driver race data has more than 50% missing data, so we excluded Michigan from",
+   "The codes in the `CountyCode` field represent counties ordered",
+   "Rows represent violations, not stops, so we remove duplicates by grouping by",
+   "Michigan data has loads of additional columns, a cluster we find very",
+   "Since all rows have a `TicketNum`, we assume that if any ticket is",
+   "Additional raw data columns that may be of interest: Michigan has over 160"
+  ],
+  "line": 4788
+ },
+ {
+  "city": "Saint Paul",
+  "state": "MN",
+  "ranges": [
+   [
+    "2001-01-01",
+    "2016-12-13"
+   ]
+  ],
+  "notes": [
+   "Data is deduplication on `DATE OF STOP`, `RACE OF DRIVER`, `AGE OF DRIVER`,",
+   "Data is lacking contraband and location information",
+   "If a citation was not issued, it's unclear whether a warning was issued or",
+   "subject_race is based on `RACE OF DRIVER` in the raw data, which is passed",
+   "search_conducted is based on `VEHICLE SEARCHED?`; \"No Data\" is assumed to be"
+  ],
+  "line": 4911
+ },
+ {
+  "city": "Statewide",
+  "state": "MO",
+  "ranges": [
+   [
+    "2010-01-01",
+    "2015-01-01"
+   ]
+  ],
+  "notes": [
+   "The original data was aggregated. There is detail on a number of fields (age,",
+   "Because this is aggregate data, stop date is only precise to the nearest",
+   "Note that the `location` column comes from the department's work location,"
+  ],
+  "line": 4998
+ },
+ {
+  "city": "Statewide",
+  "state": "MS",
+  "ranges": [
+   [
+    "2013-01-01",
+    "2016-07-27"
+   ]
+  ],
+  "notes": [
+   "Counties were mapped using the dictionary provided, which is added to the raw",
+   "There is no data on Hispanic drivers, so we exclude Mississippi from our main",
+   "`subject_race` was mapped from `raw_race`.",
+   "`violation` was populated with raw column `acd`.",
+   "Additional columns in the raw data that may be of interest: `acdoos` and `aamva`"
+  ],
+  "line": 5053
+ },
+ {
+  "city": "Statewide",
+  "state": "MT",
+  "ranges": [
+   [
+    "2009-01-01",
+    "2017-12-31"
+   ]
+  ],
+  "notes": [
+   "`subject_race` was mapped from `raw_Ethnicity` and `raw_Race`.",
+   "`search_conducted` and `search_basis` were mapped from `raw_SearchType`.",
+   "`violation` is a concatenation of `Violation[1-3]` from the raw data.",
+   "`stop_outcome` is derived from raw columns `EnforcementAction[1-3]`, see",
+   "`reason_for_stop` is populated from raw column `ReasonForStop`.",
+   "Additional columns in the raw data that may be of interest:",
+   "96,109 new stops added."
+  ],
+  "line": 5130
+ },
+ {
+  "city": "Raleigh",
+  "state": "NC",
+  "ranges": [
+   [
+    "2002-01-01",
+    "2015-12-31"
+   ]
+  ],
+  "notes": [
+   "Data is pulled out of Statewide, NC data, so refer to that for processing",
+   "Missing data 2/2004, 2/2005, 5/2005, 10/2005, 11/2005, 3/2006,"
+  ],
+  "line": 5280
+ },
+ {
+  "city": "Statewide",
+  "state": "NC",
+  "ranges": [
+   [
+    "2000-01-01",
+    "2015-12-31"
+   ]
+  ],
+  "notes": [
+   "Stop time is often unreliable \u2014 we have a large overdensity of 00:00 values,",
+   "Attempting to deduplicate on StopDate, OfficerId, StopLocation, StopCity,",
+   "The location of the stop is recorded in two different ways. Some stops have a",
+   "Action is sometimes \"No Action\" or a similarly minor enforcement action even",
+   "There can be multiple search bases per stop-search-peron, so we collapse them",
+   "There is a 1:N correspondence between StopID and PersonID, so we filtered out",
+   "When joining search data onto the stop data, the data is joined by StopID",
+   "subject_race is based on Ethnicity and Race, which are passed through as",
+   "outcomes are based on `raw_action_description`, which is based on the raw column",
+   "frisk and search data is based on SearchID and search_type_description, which",
+   "stop_purpose_description is based on raw column StopPurpose and is",
+   "`reason_for_search` represents the raw column Basis",
+   "Additional columns in the raw data that may be of interest:"
+  ],
+  "line": 5416
+ },
+ {
+  "city": "Winston-Salem",
+  "state": "NC",
+  "ranges": [
+   [
+    "2000-01-11",
+    "2015-12-31"
+   ]
+  ],
+  "notes": [
+   "Data is pulled out of Statewide, NC data, so refer to that for processing",
+   "Missing data 8/2014, 1/2015, 2/2015, and 5/2015"
+  ],
+  "line": 5594
+ },
+ {
+  "city": "Greensboro",
+  "state": "NC",
+  "ranges": [
+   [
+    "2000-01-04",
+    "2015-12-31"
+   ]
+  ],
+  "notes": [
+   "Data is pulled out of Statewide, NC data, so refer to that for processing",
+   "Missing data 8/2015, 11/2015, 11/2016, and 3/2014"
+  ],
+  "line": 5728
+ },
+ {
+  "city": "Durham",
+  "state": "NC",
+  "ranges": [
+   [
+    "2001-12-28",
+    "2015-12-31"
+   ]
+  ],
+  "notes": [
+   "Data is pulled out of Statewide, NC data, so refer to that for processing",
+   "Missing data from 2008-2013:"
+  ],
+  "line": 5862
+ },
+ {
+  "city": "Fayetteville",
+  "state": "NC",
+  "ranges": [
+   [
+    "2000-01-07",
+    "2015-12-31"
+   ]
+  ],
+  "notes": [
+   "Data is pulled out of Statewide, NC data, so refer to that for processing"
+  ],
+  "line": 6000
+ },
+ {
+  "city": "Charlotte",
+  "state": "NC",
+  "ranges": [
+   [
+    "2000-01-01",
+    "2015-12-31"
+   ]
+  ],
+  "notes": [
+   "Data is pulled out of Statewide, NC data, so refer to that for processing"
+  ],
+  "line": 6133
+ },
+ {
+  "city": "Grand Forks",
+  "state": "ND",
+  "ranges": [
+   [
+    "2007-01-01",
+    "2016-12-31"
+   ]
+  ],
+  "notes": [
+   "Data is deduplicated on raw columns agency, date, time, sex, race, age,",
+   "Many of the offenses fall into categories other than obvious pedestrian or",
+   "The department says that arrest, search, and contraband are not recorded with",
+   "There are unidentified spikes that are relatively large every year in late",
+   "subject_race is based on raw_race, which is passed through; the data does not"
+  ],
+  "line": 6266
+ },
+ {
+  "city": "Statewide",
+  "state": "ND",
+  "ranges": [
+   [
+    "2010-01-01",
+    "2015-06-25"
+   ]
+  ],
+  "notes": [
+   "The data contain records only for citations, not warnings.",
+   "Rows represent individual citations, not stops, so we remove duplicates by",
+   "The `violation` field is populated by citation codes and their descriptions.",
+   "`subject_race` is mapped from `raw_Race`.",
+   "Note that deduping by violation_date_time, Age, sex, Race, county_name,"
+  ],
+  "line": 6346
+ },
+ {
+  "city": "Statewide",
+  "state": "NE",
+  "ranges": [
+   [
+    "2002-01-01",
+    "2016-10-01"
+   ]
+  ],
+  "notes": [
+   "The original data was aggregated. It was grouped by stop reason, outcome and",
+   "State and local stops are mixed together, identifiable by the `raw_dept_lvl`",
+   "The data is by quarter, not by day. So all stop_dates are the first date of",
+   "There is a strange jump (Q1) and then dip (Q2\u20134) in the data for 2012. This"
+  ],
+  "line": 6413
+ },
+ {
+  "city": "Statewide",
+  "state": "NH",
+  "ranges": [
+   [
+    "2014-01-01",
+    "2015-12-31"
+   ]
+  ],
+  "notes": [
+   "The `driver_race` field was populated by hand-written codes that we manually",
+   "We determine stop outcome (citation, warning, etc) using",
+   "The driver_age field was not populated for the 2014.2 dataset.",
+   "Rows represent violations, not stops, so we remove duplicates by grouping by"
+  ],
+  "line": 6479
+ },
+ {
+  "city": "Statewide",
+  "state": "NJ",
+  "ranges": [
+   [
+    "2009-01-01",
+    "2016-12-31"
+   ]
+  ],
+  "notes": [
+   "New Jersey data may be updated: we still",
+   "New Jersey uses sofware produced by [LawSoft",
+   "Becuase of the above, we only know search/frisk/contraband information in",
+   "In the CAD data, there are often multiple rows per incident. Some of these",
+   "`driver_race` and `driver_gender` correspond to the race of the driver, not",
+   "Statutes are mapped using the [traffic",
+   "The CAD records contain `TOWNSHIP` which could be mapped to a county by",
+   "Additional raw data columns that might be of interest (note, these are"
+  ],
+  "line": 6575
+ },
+ {
+  "city": "Camden",
+  "state": "NJ",
+  "ranges": [
+   [
+    "2013-05-01",
+    "2018-06-13"
+   ]
+  ],
+  "notes": [
+   "Data is deduplicated on case_number, Incident Datetime, IncidentLocation,",
+   "Data does not contain search/contraband fields",
+   "There are 3 CFS_Codes, TRAFFIC STOP, PEDESTRIAN STOP, and freeform text,",
+   "It appears as though Camden police often classify hispanics as white, since",
+   "According to the PD, a \"summons\" is a citation, so that corresponds to",
+   "outcomes are based on the disposition column",
+   "subject_race is based on Race and Ethnicity, which are passed through as"
+  ],
+  "line": 6719
+ },
+ {
+  "city": "Henderson",
+  "state": "NV",
+  "ranges": [
+   [
+    "2011-06-30",
+    "2018-01-31"
+   ]
+  ],
+  "notes": [
+   "Data is deduplicated on raw columns location, city, state, zip, off_dt,",
+   "violation is a concatenation of offense_1 and offense_2 in the original data,",
+   "Missing reason_for_stop/search/contraband information",
+   "2012 has no or very little data for July, August, and September, we have an",
+   "2018 only has partial data",
+   "Data before 2011 is filtered out since 2010 data is so sparse it appears to",
+   "One of the files, `Traffic Stops 01-01-11 to 05-30-18.xlsx` came corrupted,",
+   "We assume these are all citations since the primary raw key appears to be",
+   "subject_race is based on raw column race, which is passed through as raw_race"
+  ],
+  "line": 6845
+ },
+ {
+  "city": "Statewide",
+  "state": "NV",
+  "ranges": [
+   [
+    "2012-02-14",
+    "2016-05-31"
+   ]
+  ],
+  "notes": [
+   "Nevada does not seem to record Ethnicity or have any records of Hispanic",
+   "Nevada does not record time of stop, making it ineligible for VOD analysis.",
+   "The violation field is a concatenation of two fields in the raw data:",
+   "Additional columns in the raw data that may be of interest: `Citation Number`."
+  ],
+  "line": 6956
+ },
+ {
+  "city": "Statewide",
+  "state": "NY",
+  "ranges": [
+   [
+    "2010-01-01",
+    "2017-12-14"
+   ]
+  ],
+  "notes": [
+   "The data include only citations.",
+   "There is no data on searches.",
+   "The data stops at 2017-12-14.",
+   "`subject_race` is mapped from a raw data column which was passed through as",
+   "`location` is simply a concatenation of three raw data columns:",
+   "Additional columns in the raw data that may be of interest: `LAW_SECTION`,"
+  ],
+  "line": 7017
+ },
+ {
+  "city": "Albany",
+  "state": "NY",
+  "ranges": [
+   [
+    "2008-01-01",
+    "2017-12-30"
+   ]
+  ],
+  "notes": [
+   "Data is deduplicated on incident, mapinfo_lo, date, dob, sex, and race,",
+   "Search/contraband information is missing, as well as outcomes",
+   "subject_race is based on the raw column race, which is passed through as",
+   "violation represents raw column crime_code_A, which is a description of"
+  ],
+  "line": 7115
+ },
+ {
+  "city": "Columbus",
+  "state": "OH",
+  "ranges": [
+   [
+    "2012-01-01",
+    "2016-12-30"
+   ]
+  ],
+  "notes": [
+   "`Incident Number` in the original data seems unreliable as it has several",
+   "The raw data is deduplicated on `Stop Date`, `Contact End Date`, Ethnicity,",
+   "search_conducted and outcome are based on `Enforcement Taken`, which is"
+  ],
+  "line": 7201
+ },
+ {
+  "city": "Statewide",
+  "state": "OH",
+  "ranges": [
+   [
+    "2010-01-01",
+    "2017-12-31"
+   ]
+  ],
+  "notes": [
+   "The stop_purpose field is populated by infraction codes. The corresponding",
+   "There is no data for contraband being found, but a related field could",
+   "Counties were mapped using the provided dictionary, which is included in the",
+   "We cannot find disposition codes (in `DISP_STRING`) which clearly indicate",
+   "The data contains stops of both type TS and TSA, standing for \"traffic stop\"",
+   "While there is data on search types, they only include consent and K9",
+   "`officer_id` refers to a single officer throughout their tenure on the state",
+   "`raw_DISP_STRING` is used to determine subject race, sex, stop outcome, and",
+   "Violations were mapped from `raw_ORC_STRING`.",
+   "2017 data has a slightly different format: information from DISP_STRING and",
+   "Additional columns from raw data that may be of interest: `ASINC_STRING`"
+  ],
+  "line": 7293
+ },
+ {
+  "city": "Cincinnati",
+  "state": "OH",
+  "ranges": [
+   [
+    "2009-01-01",
+    "2018-05-28"
+   ]
+  ],
+  "notes": [
+   "Data filters out passengers and where sex is \"NON-PERSON\" (i.e. business)",
+   "Data is deduplicated on instance_id, interview_date, address_x, sex, race,",
+   "Addresses are \"sanitized\", i.e. 1823 Field St. -> 18XX Field St.  since 83%",
+   "Data before 2009 is removed since it is so sparse it is likely not to be",
+   "reason_for_stop represents incident_type_desc in the raw data",
+   "outcomes are based on raw column actiontakencid, which is passed through as",
+   "type is based on field_subject_cid, which is passed through as",
+   "subject_race is based on race, which is passed through as raw_race",
+   "There are zero stops of Hispanic individuals reported after 2010."
+  ],
+  "line": 7433
+ },
+ {
+  "city": "Oklahoma City",
+  "state": "OK",
+  "ranges": [
+   [
+    "2011-01-01",
+    "2020-11-19"
+   ]
+  ],
+  "notes": [
+   "Data is deduplicated on raw columns violDate, violTime, violLocation,",
+   "Partial data from before 2011 is filtered out, although early 2011 still",
+   "Search/contraband information is missing",
+   "subject_race is based on DfndRace, which is passed through as raw_dfnd_race;",
+   "218,674 new stops added.",
+   "Individuals whose race was marked as `M` have been recoded to `other`, rather"
+  ],
+  "line": 7559
+ },
+ {
+  "city": "Tulsa",
+  "state": "OK",
+  "ranges": [
+   [
+    "2009-01-01",
+    "2016-12-31"
+   ]
+  ],
+  "notes": [
+   "Data is deduplicated on raw columns violationdate, violation_location,",
+   "Data is all citations",
+   "Data appears to be all vehicular, although the PD hasn't confirmed that yet",
+   "subject_race is based on raw column race, which is passed through as raw_race"
+  ],
+  "line": 7699
+ },
+ {
+  "city": "Statewide",
+  "state": "OR",
+  "ranges": [
+   [
+    "2010-01-01",
+    "2014-01-01"
+   ]
+  ],
+  "notes": [
+   "There is basically no data, including no data on Hispanic drivers, so we",
+   "Counts for 2015 and 2016 are much lower than in earlier years.",
+   "subject_race is mapped from `raw_Race`"
+  ],
+  "line": 7791
+ },
+ {
+  "city": "Philadelphia",
+  "state": "PA",
+  "ranges": [
+   [
+    "2014-01-01",
+    "2018-04-14"
+   ]
+  ],
+  "notes": [
+   "Data is deduplicated on raw columns datetimeoccur, location, districtoccur,",
+   "Information on citations and warnings is missing, but arrests are included",
+   "search_person and search_vehicle correspond to raw columns",
+   "contraband_found is based on raw columns individual_contraband and",
+   "subject_race is based on the raw column race, which is passed through as",
+   "2018 has only partial data, and it appears to be the same for early 2014"
+  ],
+  "line": 7826
+ },
+ {
+  "city": "Pittsburgh",
+  "state": "PA",
+  "ranges": [
+   [
+    "2008-01-01",
+    "2018-04-29"
+   ]
+  ],
+  "notes": [
+   "The raw data for pedestrian stops actually has many cities in it, but here we",
+   "Raw data for vehicle stops has stop end time as well",
+   "There are instances when evidencefound is true but contrabandfound is NA, so",
+   "if a search was conducted and the stop type was vehicular (pedestrian stops",
+   "search_conducted is true when any one of objectsearched (pedestrian stops),",
+   "Sex and gender do not match 73% of the time in pedestrian data, and race and",
+   "There are 4 zone-related columns in the raw data: zone, zone_division,",
+   "The data is deduplicated on raw columns stop_date, stopstart, stopend,",
+   "violation represents raw column crimedescription",
+   "2008 and early 2009 appear to have partial data and 2018 only has the first 4"
+  ],
+  "line": 7941
+ },
+ {
+  "city": "Statewide",
+  "state": "RI",
+  "ranges": [
+   [
+    "2005-01-02",
+    "2015-12-31"
+   ]
+  ],
+  "notes": [
+   "The stops are mapped to state patrol zones, which represent police barrack",
+   "contraband information was mapped from `raw_SearchResult[One/Two/Three]`.",
+   "Column `search_basis` is a standardized version of `reason_for_search`, which,",
+   "Additional columns in the raw data that may be of interest: `SearchFrisk[One/Two/Three]`"
+  ],
+  "line": 8130
+ },
+ {
+  "city": "Statewide",
+  "state": "SC",
+  "ranges": [
+   [
+    "2005-01-01",
+    "2016-12-31"
+   ]
+  ],
+  "notes": [
+   "The `police_department` field is populated by state patrol agency.",
+   "More data on local stops is available",
+   "While there is data on violation, many of the stops have missing data.",
+   "Violation is a concatenation of `sectionnum` and `offensecode` in the raw data.",
+   "Additional columns in the raw data that may be of interest (Note, many of these",
+   "Original officer\\_badge\\_number is not unique, so it is hashed with the"
+  ],
+  "line": 8284
+ },
+ {
+  "city": "Statewide",
+  "state": "SD",
+  "ranges": [
+   [
+    "2012-01-01",
+    "2016-02-29"
+   ]
+  ],
+  "notes": [
+   "Race data is missing, so we exclude South Dakota from our analysis.",
+   "Some county names were misrecorded.",
+   "Additional columns in raw data that may be of interest: `Eye Color`, `Insurance`,"
+  ],
+  "line": 8453
+ },
+ {
+  "city": "Statewide",
+  "state": "TN",
+  "ranges": [
+   [
+    "1971-01-05",
+    "2016-06-26"
+   ]
+  ],
+  "notes": [
+   "The data contain only citations.",
+   "The codes in the `CNTY_NBR` field represent counties ordered alphabetically.",
+   "`location` is a concatenation of raw fields `UP_STR_HWY` (highway/street) and",
+   "`raw_ORIG_TRFC_VIOL_CDE` maps to `violation`, `raw_CNTY_NBR` maps to",
+   "Additional raw data columns that may be of interest: `SPEED`, `SPEED_LMT`,"
+  ],
+  "line": 8532
+ },
+ {
+  "city": "Nashville",
+  "state": "TN",
+  "ranges": [
+   [
+    "2010-01-01",
+    "2019-03-24"
+   ]
+  ],
+  "notes": [
+   "Data is deduplicated on raw columns stop_date_time, stop_location_street,",
+   "There are 30 (of ~2.6M records) cases where search_conducted is ambiguous",
+   "reason_for_stop and violation are both translations of the original stop_type",
+   "contraband_drugs is raw column drugs_seized, contraband_weapons is",
+   "citation_issued is derived from traffic_citation_issued and",
+   "warning_issued is derived from verbal_warning_issued and",
+   "search_basis is based on the raw columns search_plain_view, search_consent,",
+   "subject_race is derived from raw columns suspect_ethnicity and suspect_race,",
+   "search_person is derived from search_driver and search_passenger, which are",
+   "When contraband_found is NA, we fill it with false when a search occurred,"
+  ],
+  "line": 8638
+ },
+ {
+  "city": "Arlington",
+  "state": "TX",
+  "ranges": [
+   [
+    "2016-01-01",
+    "2016-12-31"
+   ]
+  ],
+  "notes": [
+   "Unclear what PRA, xCoordinate, and yCoordinate are in the raw data",
+   "Missing data dictionaries for reason_for_stop, outcome, and search_ outcome,",
+   "subject_race is based on raw column `1st digit (Race)`, which is passed",
+   "Only 2016 data was provided"
+  ],
+  "line": 8851
+ },
+ {
+  "city": "Austin",
+  "state": "TX",
+  "ranges": [
+   [
+    "2006-01-01",
+    "2016-06-30"
+   ]
+  ],
+  "notes": [
+   "Data is deduplicated on raw column street_check_case_number, occurred_date,",
+   "Data does not include location or outcomes",
+   "There are no clear pedestrian-only discretionary stops in",
+   "reason_for_stop represents raw column reason_checked_description",
+   "search_person and search_vehicle represent person_searched and",
+   "frisk_performed is based on person_search_search_based_on, and is false when",
+   "search_basis is derived from person_search_search_based_on and",
+   "contraband_{found,drugs,weapons} are derived from",
+   "reason_for_stop represents the raw column reason_checked_description;",
+   "subject_race is based on raw columns race and ethnicity; there is also a raw"
+  ],
+  "line": 8948
+ },
+ {
+  "city": "Garland",
+  "state": "TX",
+  "ranges": [
+   [
+    "2012-01-03",
+    "2019-06-22"
+   ]
+  ],
+  "notes": [
+   "Data is deduplicated on raw columns sex, race, vehicle_year, vehicle_color,",
+   "incident_address (location in clean) is 100% null, we have an outstanding",
+   "We assume these are all citations since they appear to be indexed by ticket",
+   "violation represents offense_title in the raw data",
+   "Data is lacking reason_for_stop/search/contraband information",
+   "officer_race is mostly NA or \"U\", the remainder are white or Asian/Pacific",
+   "subject_race is based on raw column race, which is passed through with the",
+   "Sometimes the same stop has different speeds recorded; often a pair",
+   "2012 and 2018 have only partial data"
+  ],
+  "line": 9111
+ },
+ {
+  "city": "Houston",
+  "state": "TX",
+  "ranges": [
+   [
+    "2014-01-01",
+    "2020-11-04"
+   ]
+  ],
+  "notes": [
+   "Data is deduplicated on raw columns `Defendant Name`, Gender, Race, Street,",
+   "Data is lacking search/contraband information",
+   "Data consists only of citations",
+   "When speed and posted_speed were 0, we set them to NA, under the assumption",
+   "subject_race is based on the raw column Race, passed through as raw_race",
+   "670,052 new stops added.",
+   "2018 has been updated to the full year, and a small number of rows not"
+  ],
+  "line": 9247
+ },
+ {
+  "city": "Lubbock",
+  "state": "TX",
+  "ranges": [
+   [
+    "2008-05-01",
+    "2018-04-30"
+   ]
+  ],
+  "notes": [
+   "Insufficient information here to deduplicate records, if there are duplicates",
+   "Missing reason_for_stop/search/contraband/subject_sex/subject_race data",
+   "There is an outstanding ask for a data dictionary for the disposition codes"
+  ],
+  "line": 9370
+ },
+ {
+  "city": "Plano",
+  "state": "TX",
+  "ranges": [
+   [
+    "2012-01-01",
+    "2015-12-31"
+   ]
+  ],
+  "notes": [
+   "Data is rather messy from year to year with different columns, and files with",
+   "violation is a concatenation of violation_description, primary_violation,",
+   "Data is deduplicated on date, time, location, officer_id, subject_age,",
+   "location is a coalesced version of the raw columns location,",
+   "raw_results is a concatenation of officer_result, result, and result_[1-8],",
+   "search_conducted represents search_conducted, search_performed, and searched",
+   "When the contraband and contraband_found raw columns are NA, they are assumed"
+  ],
+  "line": 9432
+ },
+ {
+  "city": "Statewide",
+  "state": "TX",
+  "ranges": [
+   [
+    "2006-01-01",
+    "2017-12-31"
+   ]
+  ],
+  "notes": [
+   "There is evidence that minority drivers are labeled as white in the data. For",
+   "We asked whether there was a field which provided arrest data, but received",
+   "Based on the provided data dictionary as well as clarification from DPS via",
+   "The data only records when citations and warnings were issued, but not",
+   "We did not receive any search information in the 2017 data."
+  ],
+  "line": 9621
+ },
+ {
+  "city": "San Antonio",
+  "state": "TX",
+  "ranges": [
+   [
+    "2012-01-01",
+    "2020-06-30"
+   ]
+  ],
+  "notes": [
+   "Data is deduplicated on citation_number, reducing the number of rows by",
+   "Data consists only of arrests and citations",
+   "contraband_found is based on the raw column `Contraband Or Evidence`; when",
+   "search_basis is based on the raw column `Search Reason`, which is passed",
+   "search_conducted is false when `Search Reason` is NA, \"No Search\", or one of",
+   "subject_race is based on the raw column Race and is passed through as",
+   "arrest_made is based on raw column `Custodial Arrest Made`, which is passed",
+   "2018 has only the first 4 months of data",
+   "260,675 new stops added.",
+   "Approximately thirty stops have been recoded from district 2330 have been",
+   "Stops are now deduplicated on citation number *and* year, to reflect that one"
+  ],
+  "line": 9787
+ },
+ {
+  "city": "Statewide",
+  "state": "VA",
+  "ranges": [
+   [
+    "2006-01-07",
+    "2016-04-23"
+   ]
+  ],
+  "notes": [
+   "The original data was aggregated by week.",
+   "Some rows have an unlikely high number of stops or searches. We have an",
+   "Counties were mapped using the provided dictionary, which is included in the",
+   "There are no written warnings in Virginia and verbal warnings are not",
+   "In the raw data, \"Traffic arrests\" refer to citations without a search.",
+   "Additional columns in raw data that may be of interest: officer name."
+  ],
+  "line": 9965
+ },
+ {
+  "city": "Burlington",
+  "state": "VT",
+  "ranges": [
+   [
+    "2012-01-01",
+    "2020-05-27"
+   ]
+  ],
+  "notes": [
+   "Data is deduplicated on raw columns issued_at, location, race, gender, city,",
+   "Calls are also provided in the raw data, but aren't loaded here",
+   "subject_race is based on the raw column race which is passed through as",
+   "reason_for_stop represents the raw column stop_based_on, and",
+   "When reason_for_search, i.e. search_based_on, is NA, we assume search",
+   "outcomes are based on raw column outcome_of_stop, which is passed through as",
+   "5,332 new stops added."
+  ],
+  "line": 10048
+ },
+ {
+  "city": "Statewide",
+  "state": "VT",
+  "ranges": [
+   [
+    "2010-07-01",
+    "2015-12-31"
+   ]
+  ],
+  "notes": [
+   "Stop purpose information is not very granular \u2014 there are only five",
+   "The search type field includes \"Consent search \u2014 probable cause\" and \u201cConsent",
+   "Counties could be mapped by running the cities in the `raw_stop_city` field",
+   "`location` is a simple concatenation of address, city, state, zip.",
+   "`search_conducted` was mapped from `raw_stop_search_description`.",
+   "`contraband_found` was mapped from `raw_stop_contraband_description`."
+  ],
+  "line": 10182
+ },
+ {
+  "city": "Statewide",
+  "state": "WA",
+  "ranges": [
+   [
+    "2009-01-01",
+    "2015-12-31"
+   ]
+  ],
+  "notes": [
+   "Counties were mapped by doing a reverse look-up of the geo lat/long",
+   "Arrests and citations are grouped together in the `stop_outcome`, so we",
+   "If one were to dedupe on employee_last, employee_first, officer_race,",
+   "Weigh station stops were removed.",
+   "`raw_enforcements` is simply a concatenation of 12 enforcement columns in the",
+   "Additional columns in the raw data that may be of interest: officer name",
+   "A `raw` enforcement value of 1 corresponds to either a citation or an arrest."
+  ],
+  "line": 10309
+ },
+ {
+  "city": "Tacoma",
+  "state": "WA",
+  "ranges": [
+   [
+    "2007-09-11",
+    "2017-09-10"
+   ]
+  ],
+  "notes": [
+   "reason_for_stop is not recorded, and search/contraband information is not in"
+  ],
+  "line": 10470
+ },
+ {
+  "city": "Seattle",
+  "state": "WA",
+  "ranges": [
+   [
+    "2006-01-01",
+    "2015-12-31"
+   ]
+  ],
+  "notes": [
+   "citation_issued includes criminal and non-criminal citations",
+   "violation represents raw column mir_description",
+   "type is based on violation (mir_description) and type_description, which is",
+   "outcomes are based on disposition, which represents raw column",
+   "vehicle_* columns are based on a coalesced combination of veh and vehcile",
+   "The officer ID associated with the raw column officer\\_no\\_1 is not unique,"
+  ],
+  "line": 10547
+ },
+ {
+  "city": "Madison",
+  "state": "WI",
+  "ranges": [
+   [
+    "2007-09-28",
+    "2020-06-16"
+   ]
+  ],
+  "notes": [
+   "Data is deduplicated on raw columns Date, Time, onStreet, onStreetName,",
+   "violation represents raw column `Statute Description`",
+   "Search/contraband information is missing",
+   "Data only includes warnings and citations, no arrests",
+   "If there was no `Ticket #`, this was assumed to be a warning",
+   "Shapefiles don't include district 2 and it's accompanying sectors",
+   "subject_race is based on raw column Race, passed through as raw_race",
+   "2007 has partial data and looks suspect; 2017 is missing October, November,",
+   "53,526 new stops added.",
+   "Data from 2017 cover only the period January to September; we did not obtain"
+  ],
+  "line": 10693
+ },
+ {
+  "city": "Statewide",
+  "state": "WI",
+  "ranges": [
+   [
+    "2010-01-01",
+    "2016-05-16"
+   ]
+  ],
+  "notes": [
+   "The data come from two systems (\"7.3\" and \"10.0\") that succeeded each other.",
+   "There are two copies of the data: warnings and citations. Citations seems to",
+   "The `police_department` field is populated by highway patrol agencies. There",
+   "There are very few consent searches relative to other states, suggesting a",
+   "`raw_[individual/vehicle]Contraband` were mapped using a data dictionary",
+   "`raw_[individual/vehicle]SearchBasis` were mapped using a data dictionary.",
+   "`violation` was mapped directly from `StatuteDescription` in the raw data.",
+   "`location` is a concatenation of `raw_onHighwayDirection`, `raw_onHighwayName`,",
+   "There are about 150 columns in the raw data (many columns about road"
+  ],
+  "line": 10828
+ },
+ {
+  "city": "Statewide",
+  "state": "WY",
+  "ranges": [
+   [
+    "2011-01-01",
+    "2012-12-31"
+   ]
+  ],
+  "notes": [
+   "Only citations are included in the data.",
+   "The `department_name` field is populated by the state trooper division.",
+   "The violation field is populated by violated statute codes.",
+   "Rows represent citations, not stops, so we remove duplicates by grouping by",
+   "`contraband_found` could potentially be derived from violation codes",
+   "`department_id` was mapped directly from `emdivision` in the raw data.",
+   "`violation` was mapped directly from `charge` in the raw data.",
+   "`location` is a concatenation of `raw_streetnbr`, `raw_street`, and `city`",
+   "Additional columns in raw data that may be of interest: `statute`,",
+   "December 16th, 2019:",
+   "April 3rd, 2020:"
+  ],
+  "line": 11048
+ }
+]
