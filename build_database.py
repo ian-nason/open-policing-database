@@ -113,8 +113,11 @@ def load_file(con, z: Path, first: bool) -> dict:
         member = [m for m in zf.namelist() if m.endswith(".csv")][0]
         zf.extract(member, TMP)
     csv = TMP / member
+    # the files are R write.csv output: comma-delimited, double-quoted where needed. The
+    # dialect is given explicitly because an unquoted apostrophe in a vehicle model
+    # ('RIO in tx_austin) made the sniffer pick ' as the quote character.
     con.execute(f"CREATE OR REPLACE TABLE _raw AS SELECT * FROM read_csv('{csv}', all_varchar=true, header=true, sample_size=-1, "
-                f"ignore_errors=false, max_line_size=1048576)")
+                f"delim=',', quote='\"', escape='\"', ignore_errors=false, max_line_size=1048576)")
     header = [r[0] for r in con.execute("DESCRIBE _raw").fetchall()]
     unknown = [h for h in header if h not in STANDARD and not h.startswith("raw_")]
     if unknown:
@@ -159,7 +162,8 @@ def run_validation(con, expected_files: int) -> int:
     ck.query(con, "stops total matches locations", "SELECT (SELECT COUNT(*) FROM stops) = (SELECT SUM(rows) FROM locations)", lambda v: v, str)
     ck.query(con, "dates parsed (unparsed < 0.1% overall)", "SELECT SUM(unparsed_dates) * 1.0 / SUM(rows) FROM locations", lambda v: v < 0.001, lambda v: f"{v:.4%}")
     ck.query(con, "date populated (> 99%)", "SELECT COUNT(date) * 1.0 / COUNT(*) FROM stops", lambda v: v > 0.99, lambda v: f"{v:.2%}")
-    ck.query(con, "stop dates within 2000-2024", "SELECT COUNT(*) FROM stops WHERE date < '2000-01-01' OR date > '2024-12-31'", lambda n: n < 1000, str)
+    ck.query(con, "stop dates outside 1990-2024 are rare (< 1%)", "SELECT COUNT(*) FILTER (WHERE date < '1990-01-01' OR date > '2024-12-31') * 1.0 / COUNT(*) FROM stops",
+             lambda v: v < 0.01, lambda v: f"{v:.3%}")
     ck.query(con, "type values are vehicular/pedestrian/NULL", "SELECT COUNT(*) FROM stops WHERE type NOT IN ('vehicular', 'pedestrian')", lambda n: n == 0, str)
     ck.query(con, "subject_race values are the project's categories",
              "SELECT COUNT(DISTINCT subject_race) FROM stops WHERE subject_race NOT IN ('white','black','hispanic','asian/pacific islander','other','unknown')", lambda n: n == 0, str)

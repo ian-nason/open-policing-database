@@ -8,7 +8,7 @@ single query runs across states.
 
 | Table | One row per | Rows |
 |-------|-------------|-----:|
-| `stops` | police stop (vehicular or pedestrian) | [STOPS] |
+| `stops` | police stop (vehicular or pedestrian) | 230,002,617 |
 | `locations` | source file: state, city or statewide, release, rows, observed and stated coverage, data notes | 88 |
 | `v_stops_by_year` (view) | location x year: stops, searches, contraband hits, arrests, citations, warnings | |
 
@@ -70,7 +70,7 @@ not `raw_*` fails the build.
 
 ```bash
 uv sync && ./download_data.sh        # 88 zipped CSVs, 4.8 GB, from stacks.stanford.edu
-uv run python build_database.py      # one location at a time; ~[MINUTES] minutes, DuckDB capped at 4 GB
+uv run python build_database.py      # one location at a time; ~75 minutes, DuckDB capped at 4 GB
 uv run python publish_to_hf.py --verify
 ```
 
