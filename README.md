@@ -24,7 +24,7 @@ con = datapond.connect("open-policing")
 con.sql("""
     SELECT state, subject_race, COUNT(*) AS stops,
            ROUND(100.0 * COUNT(*) FILTER (WHERE search_conducted)
-                 / COUNT(*) FILTER (WHERE search_conducted IS NOT NULL), 2) AS pct_searched
+                 / NULLIF(COUNT(*) FILTER (WHERE search_conducted IS NOT NULL), 0), 2) AS pct_searched
     FROM stops WHERE date >= '2015-01-01' AND subject_race IN ('white', 'black', 'hispanic')
     GROUP BY 1, 2 ORDER BY 1, 2
 """).show()

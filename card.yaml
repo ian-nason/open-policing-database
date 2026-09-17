@@ -16,7 +16,7 @@ intro: |
   the project's data notes; `v_stops_by_year` gives per-location annual counts.
 quick_start_sql: |
   SELECT state, subject_race, COUNT(*) AS stops,
-         ROUND(100.0 * COUNT(*) FILTER (WHERE search_conducted) / COUNT(*) FILTER (WHERE search_conducted IS NOT NULL), 2) AS pct_searched
+         ROUND(100.0 * COUNT(*) FILTER (WHERE search_conducted) / NULLIF(COUNT(*) FILTER (WHERE search_conducted IS NOT NULL), 0), 2) AS pct_searched
   FROM policing.stops WHERE date >= '2015-01-01' AND subject_race IN ('white', 'black', 'hispanic')
   GROUP BY 1, 2 ORDER BY 1, 2;
 footer: |
